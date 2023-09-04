@@ -1,4 +1,4 @@
-package com.ryo.domain;
+package com.ryo.cinemaapplicationdemo.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
