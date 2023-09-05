@@ -8,17 +8,24 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "Cinema_Users")
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class Screening {
 
     @Id
     @GeneratedValue
     private Long id;
-    private String username;
-    private String password;
+
+    //Cinema
+    @ManyToOne
+    private Cinema cinema;
+
+    //Ticket
+    @OneToMany
+    @Getter
+    @Setter
+    private List<Ticket> ticket;
 
     @OneToMany
     @Getter

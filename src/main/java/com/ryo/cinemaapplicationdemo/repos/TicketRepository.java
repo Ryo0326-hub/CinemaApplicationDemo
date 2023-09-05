@@ -1,9 +1,7 @@
 package com.ryo.cinemaapplicationdemo.repos;
 
 import com.ryo.cinemaapplicationdemo.domain.Ticket;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
-@Repository
-public interface TicketRepository extends JpaRepository<Ticket, Long> {
+public interface TicketRepository extends CrudRepository<Ticket, Long> {
 }

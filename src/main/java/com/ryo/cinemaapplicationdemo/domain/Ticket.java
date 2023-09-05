@@ -18,11 +18,16 @@ public class Ticket {
 
     @Column(name = "Ticket_Price")
     private Double price;
+
     @Column(length = 20,name = "Movie_Name")
     private String movieName;
 
     @Column(name = "Seat_Number")
     private Double seatNumber;
+
+    //Screening
+    @ManyToOne
+    private Screening screening;
 
 
 }
