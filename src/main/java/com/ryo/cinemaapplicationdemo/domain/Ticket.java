@@ -5,29 +5,34 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
-@Table(name = "Tickets")
+@Table(name = "tickets")
 @Getter
 @Setter
 @NoArgsConstructor
 public class Ticket {
 
     @Id
-    @GeneratedValue
-    private Long ID;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    @Column(name = "Ticket_Price")
+    @Column(name = "ticket_price")
     private Double price;
 
-    @Column(length = 20,name = "Movie_Name")
-    private String movieName;
+//    @Column(length = 20,name = "movie_name")
+//    private String movieName;
 
-    @Column(name = "Seat_Number")
-    private Double seatNumber;
+    @Column(name = "seat_number")
+    private Integer seatNumber;
 
     //Screening
+//    @ManyToOne
+//    private Screening screening;
+
     @ManyToOne
-    private Screening screening;
+    private Movie movie;
 
 
 }

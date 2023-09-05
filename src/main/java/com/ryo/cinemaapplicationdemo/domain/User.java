@@ -8,21 +8,23 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "Cinema_Users")
+@Table(name = "cinema_users")
 @Getter
 @Setter
 @NoArgsConstructor
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String username;
+
     private String password;
 
-    @OneToMany
-    @Getter
-    @Setter
+    private Double balance;
+
+    @OneToMany(mappedBy = "user")
     private List<Booking> booking;
 
 }
